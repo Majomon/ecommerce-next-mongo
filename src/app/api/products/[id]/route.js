@@ -8,6 +8,7 @@ export async function PUT(request, { params }) {
     newTitle: title,
     newDescription: description,
     newPrice: price,
+    newImage: image,
     newStock: stock,
     newActive: active,
   } = await request.json();
@@ -16,6 +17,7 @@ export async function PUT(request, { params }) {
     title,
     description,
     price,
+    image,
     stock,
     active,
   });
