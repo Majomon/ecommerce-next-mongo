@@ -3,9 +3,9 @@ import connectMongoDb from "@/app/mongo";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { title, description, price, stock } = await request.json();
+  const { title, description, price, image, stock } = await request.json();
   await connectMongoDb();
-  await Product.create({ title, description, price, stock });
+  await Product.create({ title, description, price, image, stock });
   return NextResponse.json({ message: "Producto creado" }, { status: 201 });
 }
 
