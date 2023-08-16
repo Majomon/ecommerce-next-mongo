@@ -8,9 +8,23 @@ export async function PUT(request, { params }) {
     newTitle: title,
     newDescription: description,
     newPrice: price,
-    newstock: stock,
+    newStock: stock,
+    newActive: active,
   } = await request.json();
   await connectMongoDb();
-  await Product.findByIdAndUpdate(id, { title, description, price, stock });
+  await Product.findByIdAndUpdate(id, {
+    title,
+    description,
+    price,
+    stock,
+    active,
+  });
   return NextResponse.json({ message: "Producto modificado" }, { status: 200 });
+}
+
+export async function GET(request, { params }) {
+  const { id } = params;
+  await connectMongoDb();
+  const product = await Product.findOne({ _id: id });
+  return NextResponse.json({ product }, { status: 200 });
 }

@@ -6,6 +6,10 @@ const productSchema = new Schema(
     description: String,
     price: Number,
     stock: Number,
+    active: {
+      type: Boolean,
+      default: true,
+    },
   },
   {
     timestamps: true,
