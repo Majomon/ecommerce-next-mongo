@@ -5,7 +5,10 @@ const productSchema = new Schema(
     title: String,
     description: String,
     price: Number,
-    stock: Number,
+    stock: {
+      type: Number,
+      default: 1000,
+    },
     active: {
       type: Boolean,
       default: true,
