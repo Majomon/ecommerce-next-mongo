@@ -18,8 +18,7 @@ function Navbar() {
           <Link key={index} href={option.to}>
             <p
               className={`text-base ${
-                pathname !== option.to &&
-                "text-slate-500"
+                pathname !== option.to && "text-slate-500"
               }`}
             >
               {option.name}
