@@ -1,0 +1,21 @@
+[debug] [2023-08-16T21:26:34.478Z] ----------------------------------------------------------------------
+[debug] [2023-08-16T21:26:34.481Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mauri\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-08-16T21:26:34.481Z] CLI Version:   12.4.8
+[debug] [2023-08-16T21:26:34.481Z] Platform:      win32
+[debug] [2023-08-16T21:26:34.482Z] Node Version:  v18.17.1
+[debug] [2023-08-16T21:26:34.483Z] Time:          Wed Aug 16 2023 18:26:34 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-08-16T21:26:34.483Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-16T21:26:34.490Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-16T21:26:34.491Z] > authorizing via signed-in user (mauri.monzon91@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Programacion\Proyectos propios\Ecommerce-next-mongo
+
