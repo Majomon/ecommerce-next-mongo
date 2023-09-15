@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -11,22 +10,25 @@ function ProductsContainer() {
   const [dataProducts, setDataProducts] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      const fetch = async () => {
-        const { data } = await axios.get("/api/products");
-        setDataProducts(data);
-      };
-      fetch();
-      setLoading(false);
-    }, 1500);
+    const fetch = async () => {
+      const { data } = await axios.get("/api/products");
+      setDataProducts(data);
+    };
+    fetch();
+    setLoading(false);
   }, []);
 
   return (
-    <div>
+    <div className="w-[100%] h-[90vh] flex justify-center items-center text-center">
       {loading ? (
-        <Spinner aria-label="Info spinner example" color="info" />
+        <Spinner
+          aria-label="Info spinner example"
+          color="info"
+          size="xl"
+          className="w-3/12 h-3/12"
+        />
       ) : (
-        <div>
+        <div className="w-full h-full flex flex-wrap justify-center mt-10 mx-6">
           {dataProducts.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}
