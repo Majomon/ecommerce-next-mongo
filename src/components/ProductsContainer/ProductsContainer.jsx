@@ -1,0 +1,43 @@
+"use client";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import ProductCard from "../ProductCard/ProductCard";
+//Loading
+import { Spinner } from "flowbite-react";
+
+function ProductsContainer() {
+  const [loading, setLoading] = useState(true);
+  const [dataProducts, setDataProducts] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await axios.get("/api/products");
+      setDataProducts(data);
+    };
+    fetch();
+    setLoading(false);
+  }, []);
+
+  return (
+    <div className="w-full h-full flex justify-center items-center text-center ">
+      {loading ? (
+        <div className="w-[500px] h-[500px] flex justify-center items-center">
+          <Spinner
+            aria-label="Info spinner example"
+            color="info"
+            size="xl"
+            className="w-3/12 h-3/12"
+          />
+        </div>
+      ) : (
+        <div className="w-full h-full flex flex-wrap justify-center mt-10 mx-6">
+          {dataProducts.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default ProductsContainer;
