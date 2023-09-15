@@ -1,4 +1,4 @@
-const productsData = [
+export const productsData = [
   {
     title: "Cheeseburger",
     description: "1x meat + 2x cheese ",
