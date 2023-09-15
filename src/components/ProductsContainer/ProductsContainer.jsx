@@ -19,14 +19,16 @@ function ProductsContainer() {
   }, []);
 
   return (
-    <div className="w-[100%] h-[90vh] flex justify-center items-center text-center">
+    <div className="w-full h-full flex justify-center items-center text-center ">
       {loading ? (
-        <Spinner
-          aria-label="Info spinner example"
-          color="info"
-          size="xl"
-          className="w-3/12 h-3/12"
-        />
+        <div className="w-[500px] h-[500px] flex justify-center items-center">
+          <Spinner
+            aria-label="Info spinner example"
+            color="info"
+            size="xl"
+            className="w-3/12 h-3/12"
+          />
+        </div>
       ) : (
         <div className="w-full h-full flex flex-wrap justify-center mt-10 mx-6">
           {dataProducts.map((product) => (
