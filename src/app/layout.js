@@ -1,5 +1,8 @@
+import axios from "axios";
 import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
+
+axios.defaults.baseURL = "http://localhost:3001";
 
 export const metadata = {
   title: "The Burger Store",
@@ -11,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        {children}
+        <main className="pt-10">{children}</main>
       </body>
     </html>
   );

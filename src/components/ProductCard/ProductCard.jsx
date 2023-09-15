@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function ProductCard() {
+function ProductCard({ product }) {
   return (
     <div>
-      
+      <h2>{product.title}</h2>
     </div>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;
