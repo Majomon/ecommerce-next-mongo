@@ -1,11 +1,7 @@
 import React from "react";
 
 function page() {
-  return (
-    <div>
-      <h1>Payment</h1>
-    </div>
-  );
+  return <div>Failure</div>;
 }
 
 export default page;

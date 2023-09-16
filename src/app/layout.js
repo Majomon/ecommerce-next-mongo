@@ -4,6 +4,7 @@ import "./globals.css";
 
 axios.defaults.baseURL = "http://localhost:3001";
 
+
 export const metadata = {
   title: "The Burger Store",
   description: "Created by Mauricio Monzon and Sebastian Toranzo © 2023",
