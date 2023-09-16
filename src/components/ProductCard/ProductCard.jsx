@@ -7,11 +7,13 @@ function ProductCard({ product }) {
       <img className="w-full h-[55%]" src={product.image} alt={product.title} />
       <div className="w-full h-[45%] p-2 flex flex-col justify-between">
         <h2 className="text-black font-bold text-xl mb-2">{product.title}</h2>
-        <p className="text-gray-700 text-sm">{product.description}</p>
+        <p className="text-gray-700 text-sm font-medium">{product.description}</p>
         <div className="flex justify-around items-center px-6 pt-4 pb-2">
-          <p className="text-gray-600 text-base">${product.price}</p>
-          <button className="bg-yellow-600 text-white font-bold py-1 px-2 rounded-lg hover:bg-orange-500 hover:text-white transition duration-300 ease-in-out">
-            Comprar
+          <p className="text-emerald-600 text-base font-bold">
+            U$S {product.price.toFixed(2)}.-
+          </p>
+          <button className="bg-yellow-600 text-white font-bold py-1 px-2 rounded-lg hover:bg-orange-600 transition duration-300 ease-in-out">
+            Add to Cart
           </button>
         </div>
       </div>
