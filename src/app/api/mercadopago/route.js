@@ -13,7 +13,7 @@ export async function POST(request) {
           unit_price: Number(productsItems.price),
           currency_id: "ARS",
           description: productsItems.description,
-          quantity: productsItems.stock,
+          quantity: 1,
         },
       ],
       back_urls: {
