@@ -10,13 +10,13 @@ export async function GET() {
 
 export async function POST(request) {
   try {
-    const { title, description, price, image, stock } = await request.json();
+    const { name, description, price, image, stock } = await request.json();
 
-    if (!title || !description || !price || !image)
+    if (!name || !description || !price || !image)
       throw new Error("Missing data");
     await connectMongoDb();
     const newProduct = await Product.create({
-      title,
+      name,
       description,
       price,
       image,
