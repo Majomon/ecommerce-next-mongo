@@ -11,6 +11,7 @@ export async function GET() {
 export async function POST(request) {
   try {
     const { title, description, price, image, stock } = await request.json();
+
     if (!title || !description || !price || !image)
       throw new Error("Missing data");
     await connectMongoDb();
@@ -21,6 +22,7 @@ export async function POST(request) {
       image,
       stock,
     });
+
     return NextResponse.json(newProduct, { status: 201 });
   } catch (error) {
     return NextResponse.json(error.message);

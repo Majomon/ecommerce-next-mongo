@@ -3,8 +3,9 @@ import axios from "axios";
 
 function ProductCard({ product }) {
   const buyProducts = async (prod) => {
-    const {data} = await axios.post("/api/payment", prod);
+    const { data } = await axios.post("/api/mercadopago", prod);
     window.location.href = data.init_point;
+    /*   console.log(prod); */
   };
 
   return (
