@@ -15,6 +15,7 @@
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.16",
     "flowbite-react": "^0.6.0",
+    "mercadopago": "^1.5.17",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.3",
     "next": "13.4.16",
