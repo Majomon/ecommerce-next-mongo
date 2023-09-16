@@ -5,8 +5,8 @@ import { productsData } from "../../../database/data";
 
 export async function POST(request) {
   const productsToCreate = productsData.map(async (productData) => {
-    const { title, description, price, image, stock } = productData;
-    return Product.create({ title, description, price, image, stock });
+    const { name, description, price, image, stock } = productData;
+    return Product.create({ name, description, price, image, stock });
   });
 
   await connectMongoDb();
