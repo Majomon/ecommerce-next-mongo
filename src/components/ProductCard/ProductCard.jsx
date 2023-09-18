@@ -18,12 +18,14 @@ function ProductCard({ product }) {
           {product.description}
         </p>
         <div className="flex justify-around items-center px-6 pt-4 pb-2">
-          <p className="text-gray-600 text-base">${product.price}</p>
+          <p className="text-emerald-600 text-base font-bold">
+            U$S {product.price.toFixed(2)}.-
+          </p>
           <button
             onClick={() => buyProducts(product)}
             className="bg-yellow-600 text-white font-bold py-1 px-2 rounded-lg hover:bg-orange-500 hover:text-white transition duration-300 ease-in-out"
           >
-            Comprar
+            Add to Cart
           </button>
         </div>
       </div>

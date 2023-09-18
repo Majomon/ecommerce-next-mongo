@@ -12,13 +12,13 @@ function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="w-full h-10 flex items-center place-content-center bg-slate-900 shadow-md fixed">
+    <nav className="w-full h-10 flex items-center place-content-center bg-yellow-400 shadow-md fixed">
       <div className="w-3/4 flex justify-center items-center space-x-10">
         {options.map((option, index) => (
           <Link key={index} href={option.to}>
             <p
-              className={`text-base ${
-                pathname !== option.to && "text-slate-500"
+              className={`text-slate-500 ${
+                pathname === option.to && "text-slate-700 font-bold"
               }`}
             >
               {option.name}
