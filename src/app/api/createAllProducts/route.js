@@ -1,7 +1,7 @@
 import Product from "@/app/models/products";
 import connectMongoDb from "@/app/mongo";
 import { NextResponse } from "next/server";
-import { productsData } from "../../../database/data";
+import { productsData } from "@/DataBase/data"
 
 export async function POST(request) {
   const productsToCreate = productsData.map(async (productData) => {
