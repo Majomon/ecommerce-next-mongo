@@ -3,7 +3,6 @@ import axios from "axios";
 
 function ProductCard({ product }) {
   const buyProducts = async (prod) => {
-    console.log(prod);
     const { data } = await axios.post("/api/mercadopago", prod);
     window.location.href = data.init_point;
     /*   console.log(prod); */
@@ -12,7 +11,7 @@ function ProductCard({ product }) {
   return (
     <div className="w-[260px] h-[400px] mx-6 mb-6 overflow-hidden rounded shadow-lg bg-yellow-400">
       {/* Cambiar */}
-      <img className="w-full h-[55%]" src={product.image} alt={product.title} />
+      <img className="w-full h-[55%]" src={product.image} alt={product.name} />
       <div className="w-full h-[45%] p-2 flex flex-col justify-between">
         <h2 className="text-black font-bold text-xl mb-2">{product.name}</h2>
         <p className="text-gray-700 text-sm font-medium">
