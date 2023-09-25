@@ -2,6 +2,9 @@ import mongoose, { Schema } from "mongoose";
 
 const productSchema = new Schema(
   {
+    _id: { type: String, default: function genUUID() {
+      uuid.v1()
+    }},
     name: String,
     description: String,
     price: Number,
