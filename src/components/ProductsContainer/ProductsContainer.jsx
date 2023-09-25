@@ -4,17 +4,19 @@ import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 //Loading
 import { Spinner } from "flowbite-react";
+import SearchBar from "../SearchBar/SearchBar";
 
 function ProductsContainer() {
   const [loading, setLoading] = useState(true);
   const [dataProducts, setDataProducts] = useState([]);
 
+  const fetchProductsData = async () => {
+    const { data } = await axios.get("/api/products");
+    setDataProducts(data);
+  };
+
   useEffect(() => {
-    const fetch = async () => {
-      const { data } = await axios.get("/api/products");
-      setDataProducts(data);
-    };
-    fetch();
+    fetchProductsData();
     setLoading(false);
   }, []);
 
@@ -30,10 +32,13 @@ function ProductsContainer() {
           />
         </div>
       ) : (
-        <div className="w-full h-full flex flex-wrap justify-center mt-10 mx-6">
-          {dataProducts.map((product) => (
-            <ProductCard product={product} key={product.id} />
-          ))}
+        <div className="w-full h-full flex flex-wrap justify-center mt-10">
+          <SearchBar setDataProducts={setDataProducts} />
+          <div className="w-full h-full flex flex-wrap justify-center mt-10 mx-6">
+            {dataProducts.map((product) => (
+              <ProductCard product={product} key={product._id} />
+            ))}
+          </div>
         </div>
       )}
     </div>

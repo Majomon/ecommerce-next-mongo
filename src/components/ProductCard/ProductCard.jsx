@@ -6,7 +6,6 @@ function ProductCard({ product }) {
     console.log(prod);
     const { data } = await axios.post("/api/mercadopago", prod);
     window.location.href = data.init_point;
-    /*   console.log(prod); */
   };
 
   return (
