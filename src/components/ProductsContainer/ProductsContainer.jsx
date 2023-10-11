@@ -1,14 +1,16 @@
 "use client";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
+import { useProductsStore } from "@/app/store/store";
+import SearchBar from "../SearchBar/SearchBar";
 //Loading
 import { Spinner } from "flowbite-react";
-import SearchBar from "../SearchBar/SearchBar";
 
-function ProductsContainer({ products }) {
+function ProductsContainer() {
   const [loading, setLoading] = useState(true);
-  const [dataProducts, setDataProducts] = useState(products);
+
+  const products = useProductsStore(state => state.products);
+  const getProducts = useProductsStore(state => state.getProducts);
   const [searchProducts, setSearchProducts] = useState([]);
 
 
@@ -18,8 +20,9 @@ function ProductsContainer({ products }) {
   // };
 
   useEffect(() => {
-    if(dataProducts.length > 0) setLoading(false);
-  }, []);
+    getProducts();
+    if(products.length > 0) setLoading(false);
+  }, [products]);
 
   return (
     <div className="w-full h-full flex justify-center items-center text-center ">
@@ -36,7 +39,7 @@ function ProductsContainer({ products }) {
         <div className="w-full h-full flex flex-wrap justify-center mt-10">
           {/* <SearchBar setDataProducts={setDataProducts} /> */}
           <div className="w-full h-full flex flex-wrap justify-center mt-10 mx-6">
-            {dataProducts.map((product) => (
+            {products.map((product) => (
               <ProductCard product={product} key={product._id} />
             ))}
           </div>
