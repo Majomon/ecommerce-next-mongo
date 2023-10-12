@@ -12,7 +12,6 @@ function ProductsContainer() {
   const {products, getProducts} = useProductsStore();
   const [searchProducts, setSearchProducts] = useState([]);
 
-
   // const fetchProductsData = async () => {
   //   const { data } = await axios.get("/api/products");
   //   setDataProducts(data);
