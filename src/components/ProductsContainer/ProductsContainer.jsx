@@ -9,8 +9,7 @@ import { Spinner } from "flowbite-react";
 function ProductsContainer() {
   const [loading, setLoading] = useState(true);
 
-  const products = useProductsStore(state => state.products);
-  const getProducts = useProductsStore(state => state.getProducts);
+  const {products, getProducts} = useProductsStore();
   const [searchProducts, setSearchProducts] = useState([]);
 
 
